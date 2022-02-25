@@ -5,7 +5,6 @@
 
 #include <bits/stdc++.h>
 #include <iostream>
-#include <typeinfo>
 
 using namespace std;
 
