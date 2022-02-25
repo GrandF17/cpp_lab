@@ -70,9 +70,7 @@ int main() {
 
         cout << "Element you search for (N1): " << (q.exists(N1) ? "Exist" : "Doesn't exist") << endl;
         try{ cout << "Element you search for is (N1): " << q.find(N1) << endl; }                            
-        catch (exception) {
-            std::cout << "Not found" << '\n';
-        }
+        catch (exception) { cout << "Not found" << '\n'; }
         if(q.exists(N2)) { cout << "Element you search for is (N2): " << q.find(N2) << endl; }
 
         q.clear();
