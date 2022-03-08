@@ -10,7 +10,7 @@
 
 using namespace std;
 
-template <typename K, typename V>
+template <typename K, typename V, typename Hash = std::hash<K>>
 class hash_map {
 private:
     int amount_of_hashes = 0;           //amount of elements in our hash table
@@ -18,6 +18,7 @@ private:
     const int p = 301;                  //simple digit for hash func
     int m = 16;                         //array size (modulus) - variable
     float congestion_koeff_max = 2.0;   //CKM
+    Hash h;
 
 public:
     float congestion_koeff() { return (float) amount_of_hashes / (float) m; }
@@ -26,7 +27,10 @@ public:
 
     void setCKM(float new_koeff) { congestion_koeff_max = new_koeff; }
 
+    float getCKM() { return congestion_koeff_max; }
+
 private:
+    /*
     string toString(K key) {
         ostringstream oss;
         oss << key;
@@ -43,6 +47,7 @@ private:
         }
         return hash < 0 ? hash + m : hash;
     }
+    */
 
     //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -61,7 +66,7 @@ private:
             if(!temp.at(i).empty()) {
                 for (auto currentPair : temp.at(i)) {
                     pair<K, V> currentpair = currentPair;
-                    int hash = string_hash(currentpair.first);
+                    size_t hash = h(currentpair.first) % m;
                     if(hashes.at(hash).empty()) {
                         hashes.at(hash).push_back(currentpair);
                     } else {
@@ -98,11 +103,9 @@ public:
     //constructor
     hash_map() { hashes.resize(m); }
 
-    ~hash_map() { clear(); }
-
     void insert(K key, V value) {
         pair<K, V> p = {key, value};
-        int hash = string_hash(key);
+        size_t hash = h(key) % m;
         if(hashes.at(hash).empty()) {
             hashes.at(hash).push_back(p);
             amount_of_hashes++;
@@ -138,7 +141,7 @@ public:
     }
 
     void extract(K key) {
-        int hash = string_hash(key);
+        size_t hash = h(key) % m;
         for(auto iter = hashes.at(hash).begin(); iter != hashes.at(hash).end(); iter++) {
             pair<K, V> currentpair = *iter;
             if(currentpair.first == key) {
@@ -152,15 +155,16 @@ public:
         clear(hashes);
         m = 1;
         hashes.resize(m);
+        amount_of_hashes = 0;
     }
 
-    V& get(K key) { 
-        if(!hashes.empty()) {
-            for(int i = 0; i < m; i++) {
-                try {
-                    return find_list(hashes.at(i), key).second;
-                } catch (exception) { }
-            }
+    V& get(K key) {
+        //int hash = string_hash(key);
+        size_t hash = h(key) % m;
+        if(!hashes.at(hash).empty()) {
+            try {
+                return find_list(hashes.at(hash), key).second;
+            } catch (exception) { }
         }
         throw exception();
     }
