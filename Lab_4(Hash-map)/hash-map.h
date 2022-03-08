@@ -159,7 +159,6 @@ public:
     }
 
     V& get(K key) {
-        //int hash = string_hash(key);
         size_t hash = h(key) % m;
         if(!hashes.at(hash).empty()) {
             try {
