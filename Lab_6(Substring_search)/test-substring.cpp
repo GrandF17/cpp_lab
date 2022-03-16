@@ -36,4 +36,23 @@ int main() {
 
     cout << "Searching for 'Hell': " << endl;
     KnuthMorrisPratt(sentence, "Hell") ? cout << "exists" << endl : cout << "not found" << endl;
+    
+    //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+    string sentence_A = "AAAAAAAAAAAAAA";
+
+    cout << "Our text: " << sentence_A << endl;
+
+    cout << "\n\nBoyer-Moore algorithm is running..." << endl;
+    cout << "Searching for 'AAA': " << endl;
+    BoyerMoore(sentence_A, "AAA") ? cout << "exists" << endl : cout << "not found" << endl;
+
+    //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+    cout << "\n\nRabin-Karp algorithm is running..." << endl;
+    cout << "Searching for 'AAA': " << endl;
+    RabinKarp(sentence_A, "AAA") ? cout << "exists" << endl : cout << "not found" << endl;
+
+    //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+    cout << "\n\nKnuth-Morris-Pratt algorithm is running..." << endl;
+    cout << "Searching for 'AAA': " << endl;
+    KnuthMorrisPratt(sentence_A, "AAA") ? cout << "exists" << endl : cout << "not found" << endl;
 }
