@@ -84,7 +84,7 @@ private:
         cout << "\n";
     }
 
-    pair<V, K>& find_list(list<pair<K, V>> l, K key) {
+    pair<K, V>& find_list(list<pair<K, V>> l, K key) {
         if(!l.empty()) {
             for(auto iter = l.begin(); iter != l.end(); iter++) {
                 pair<K, V> currentpair = *iter;
