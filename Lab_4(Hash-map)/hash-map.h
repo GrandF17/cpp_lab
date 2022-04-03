@@ -67,11 +67,7 @@ private:
                 for (auto currentPair : temp.at(i)) {
                     pair<K, V> currentpair = currentPair;
                     size_t hash = h(currentpair.first) % m;
-                    if(hashes.at(hash).empty()) {
-                        hashes.at(hash).push_back(currentpair);
-                    } else {
-                        hashes.at(hash).push_back(currentpair);
-                    }
+                    hashes.at(hash).push_back(currentpair);
                 }
             }
         }
