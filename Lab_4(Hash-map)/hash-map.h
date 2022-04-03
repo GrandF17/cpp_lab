@@ -149,7 +149,7 @@ public:
 
     void clear() {
         clear(hashes);
-        m = 1;
+        m = 16;
         hashes.resize(m);
         amount_of_hashes = 0;
     }
