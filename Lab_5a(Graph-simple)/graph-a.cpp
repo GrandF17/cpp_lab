@@ -227,8 +227,8 @@ int kruskal(vector<vector<pair<int, int>>>& graph) {
         cout << i + 1 << ") [" << edges[i].a << ", " << edges[i].b << ", " << edges[i].c << "]" << endl;
     }
 */
-    parent.resize(edges.size());
-    sizes.resize(edges.size());
+    parent.resize(edges.size() + 1);
+    sizes.resize(edges.size() + 1);
 
     for(int i = 0; i < sizes.size(); i++) {
         parent[i] = i;
