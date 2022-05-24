@@ -14,8 +14,8 @@ struct BNode {
 	int keys[2 * t];
 	BNode *children[2*t+1];	
 	BNode *parent;
-	int count; //количество ключей
-	int countSons; //количество сыновей
+	int count;	//	num of keys
+	int countSons;	//	num of children
 	bool leaf;
 	bool is_leaf() {
 		if (this->children[0]==NULL) return true;
