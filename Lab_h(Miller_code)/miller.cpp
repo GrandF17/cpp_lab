@@ -8,7 +8,8 @@
 
 using namespace std;
 
-//  -_-_-_-_to transform string to vactor of bits-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_- to transform string to vactor of bits -_-_-
 vector<bitset<1>> get_bits(string s) {
     vector<bitset<1>> bits;
     for (int i = 0; s[i] != '\0'; i++) {
@@ -26,7 +27,8 @@ vector<bitset<1>> get_bits(string s) {
     return bits;
 }
 
-//  -_-_-_-_-_-to generate random bit sequences-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_-_- to generate random bit sequences -_-_-_-_
 vector<bitset<1>> gen_bits() {
     vector<bitset<1>> bits;
 

@@ -50,6 +50,7 @@ int main() {
     ShowPermutation(a);
     arrayOfPermutations.push_back(a);
 
+
     // -_-_-_-_-_ second permutaion -_-_-_-_-_
 
     b.push_back(4);

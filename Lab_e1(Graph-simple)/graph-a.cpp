@@ -6,7 +6,8 @@
 
 using namespace std;
 
-//-_-_-_-_-_-_-_breadth search-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_ breadth search -_-_-_-_-_-_
 
 void bfs_list(const vector<vector<int>>& graph) {
     int start_vertex = 0;
@@ -30,7 +31,8 @@ void bfs_list(const vector<vector<int>>& graph) {
     }
 }
 
-//-_-_-_-_-_-_-_depth search-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_-_-_-_-_-_ depth search -_-_-_-_-_-_-
 
 void dfs_list(const vector<vector<int>>& graph, vector<int>& used, int current_vertex) {
     used[current_vertex] = 1;
@@ -57,7 +59,8 @@ void dfs_list(const vector<vector<int>>& graph, vector<int>& used, int current_v
     }
 }
 
-//-_-_-_-_-_-_-_dijkstra algo-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_-_-_-_-_-_ dijkstra algo -_-_-_-_-_-_-_
 
 vector<int> dijkstra(const vector<vector<pair<int, int>>>& graph, int start_vertex) {
     const int inf = 1000000;
@@ -84,7 +87,8 @@ vector<int> dijkstra(const vector<vector<pair<int, int>>>& graph, int start_vert
     return dist;
 }
 
-//-_-_-_-_-_-_-floyd-warshall algo-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_-_-_-_- floyd-warshall algo -_-_-_-_-_-
 vector<vector<int>> FWAfunc(vector<vector<int>>& dist) {
     const int n = dist.size();
     for (int k = 0; k < n; ++k)
@@ -126,7 +130,8 @@ void floyd_warshall(const vector<vector<pair<int, int>>>& graph) {
     }
 }
 
-//-_-_-_-_-_-_-special struct for Prima & Kruskal-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_ special struct for Prima & Kruskal -_-
 
 struct edge {
     int a, b, c;
@@ -178,7 +183,8 @@ int prima(vector<vector<pair<int, int>>>& graph) {
     return PRIMAfunc(graph, visited, not_visited, 0, 0);
 }
 
-//-_-_-_-_-_-_-MST (Kruskal) algo-_-_-_-_-_-_-_
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// -_-_-_-_-_- MST (Kruskal) algo -_-_-_-_-_-_
 vector<int> parent;
 vector<int> sizes;
 

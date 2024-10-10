@@ -14,10 +14,10 @@ long long int binary_exp1(long long int num, long long int n) {
 long long int binary_exp2(long long int num, long long int n) {
     long long int result = 1;
     while(n != 0) {
-        if(n & 1) {//if digit is even
-            result *= num;
-        }
-        n >>= 1;//devide by 2
+        // if digit is even
+        if(n & 1) result *= num;
+        // divide by 2
+        n >>= 1;
         num *= num;
     }
     return result;

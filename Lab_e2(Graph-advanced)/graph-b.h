@@ -17,8 +17,6 @@ void kosaraju_algo(const vector<vector<int>>&);
 
 void tarian_algo(const vector<vector<int>>&);
 
-//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 vector<vector<int>> reverse(vector<vector<int>>&);
 
 #endif

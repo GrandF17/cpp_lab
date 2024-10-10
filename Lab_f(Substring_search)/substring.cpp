@@ -30,11 +30,6 @@ vector<int> to_arr(string image) {
 int BoyerMoore(string text, string image) {
     vector<int> image_arr = to_arr(image);
     int exists = 0;
-    /*
-    for(int i = 0; i < image_arr.size(); i++) {
-        cout << image_arr[i] << " ";
-    }
-    */
 
     int k = image.size() - 1;
     while(k < text.size()) {

@@ -110,8 +110,8 @@ private:
 			} 
 		}
 		
-		//	parent
-		//	no parent --> root
+		// parent
+		// no parent --> root
 		if (node->parent == NULL) { 
 			node->keys[0] = node->keys[t - 1];
 			for(int j = 1; j <= 2 * t - 1; j++) {

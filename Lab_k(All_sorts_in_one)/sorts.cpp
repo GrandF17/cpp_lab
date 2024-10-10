@@ -213,24 +213,21 @@ int main() {
         clock_t prev = clock()/1000.0;
         selection_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
 
         cout << "Bubble sort is running..." << endl;
         arr = arr_copy;
         prev = clock()/1000.0;
         bubble_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
         
         cout << "Isertion sort is running..." << endl;
         arr = arr_copy;
         prev = clock()/1000.0;
         insertion_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
 
         //time ~ O(n*log(n)):
         cout << "Merge sort is running..." << endl;
@@ -238,16 +235,14 @@ int main() {
         prev = clock()/1000.0;    
         merge_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
         
         cout << "Quick sort is running..." << endl;
         arr = arr_copy;
         prev = clock()/1000.0;
         quick_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
 
         //time ~ O(n + m):
         cout << "Counting sort is running..." << endl;
@@ -255,8 +250,7 @@ int main() {
         prev = clock()/1000.0;
         counting_sort(arr);
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
 
         //time ~ O(n*d):
         cout << "LSD (radix) sort is running..." << endl;
@@ -264,8 +258,7 @@ int main() {
         prev = clock()/1000.0;
         radix_sort(arr);//LSD sort (also exists MSD)
         cout << "runtime = " << (clock()/1000.0 - prev) << endl;
-        if(final_arr == arr)
-            cout << "Correct" << endl;
+        if(final_arr == arr) cout << "Correct" << endl;
 
         num *= 10;
     }

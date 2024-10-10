@@ -21,7 +21,7 @@ class Map {
 
     Node* root;
     COMPARATOR C;
-    long long count;    //to count all the tree nodes in our AVL-tree
+    long long count;    // to count all the tree nodes in our AVL-tree
 
     //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

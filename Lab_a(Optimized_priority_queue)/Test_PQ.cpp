@@ -69,7 +69,8 @@ int main() {
         for(int i = 0; i < size_of_queue; i++) { q.pop(); }
 
         cout << "Queue is empty: " << (q.empty() == 0 ? "true" : "false") << endl;//Make sure the queue is empty
-        cout << "Queue size: " << q.size() << "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n";
+        cout << "Queue size: " << q.size() << endl;
+        cout << "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_" << endl;
 
         size_of_queue *= 100;
     }
